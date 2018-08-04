@@ -23,7 +23,6 @@ export default class NoteForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.addNote(this.state);
-    console.log('# 1.1 notess stufffs?', this.state.id);
     document.getElementById('form').reset();
   }
 
