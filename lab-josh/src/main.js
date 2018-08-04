@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import B from './components/styledComps.js';
+import B from './components/style.styles.js';
 
 import {
   BrowserRouter as Router,
@@ -8,15 +8,15 @@ import {
   Link
 } from 'react-router-dom';
 
-import Homepage from './components/homepage.js';
-import Players from './components/appPlayers.js';
+import Landing from './components/landing/index.js';
+import Dashboard from './components/dashboard/index.js';
 
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: 'My Routed React App'
+      title: 'Notes N Stuff'
     };
   }
 
@@ -25,13 +25,14 @@ class App extends React.Component {
       <div>
         <nav>
           <ul>
-            <li><Link to="/">Homepage</Link></li>
-            <li><Link to="/players">Players Table</Link></li>
+            <li><Link to="/">Landing</Link></li>
+            <li><Link to="/dashboard">Dashboard</Link></li>
           </ul>
         </nav>
         <B.Title>{this.state.title}</B.Title>
-        <Route exact path="/" component={Homepage} />
-        <Route path="/players" component={Players} />
+        <Route exact path="/" component={Landing} />
+        <Route path="/dashboard" component={Dashboard} />
+
 
       </div>
     </Router>;

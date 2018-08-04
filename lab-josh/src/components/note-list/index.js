@@ -1,8 +1,8 @@
 import React from 'react';
-import Reddit from '../components/styledReddit.js';
-import Results from './playerItem.js';
+import Style from '../style/styles.js';
 
-class PlayerResults extends React.Component {
+
+export default class NoteResults extends React.Component {
   constructor(props) {
     super(props);
     this.showTable = this.showTable.bind(this);
@@ -12,22 +12,20 @@ class PlayerResults extends React.Component {
   showTable() {
     console.log('showtable', this.state);
 
-    return this.props.players;
+    return this.props.notes;
   }
 
   render() {
     return (
-      <Reddit.Wrapper>
+      <Style.Wrapper>
         <div>
           <ul>
-            <Reddit.Text>
+            <Style.Text>
               {this.showTable()}
-            </Reddit.Text>
+            </Style.Text>
           </ul>
         </div>
-      </Reddit.Wrapper>
+      </Style.Wrapper>
     );
   }
 }
-
-export default PlayerResults;
