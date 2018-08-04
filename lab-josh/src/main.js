@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import B from './components/style.styles.js';
+import Style from './components/style/styles.js';
 
 import {
   BrowserRouter as Router,
@@ -29,7 +29,7 @@ class App extends React.Component {
             <li><Link to="/dashboard">Dashboard</Link></li>
           </ul>
         </nav>
-        <B.Title>{this.state.title}</B.Title>
+        <Style.Title>{this.state.title}</Style.Title>
         <Route exact path="/" component={Landing} />
         <Route path="/dashboard" component={Dashboard} />
 
