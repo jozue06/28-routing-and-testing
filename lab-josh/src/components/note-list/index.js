@@ -1,0 +1,31 @@
+import React from 'react';
+import Style from '../style/styles.js';
+
+
+export default class NoteResults extends React.Component {
+  constructor(props) {
+    super(props);
+    this.showTable = this.showTable.bind(this);
+  }
+
+
+  showTable() {
+    console.log('showtable', this.state);
+
+    return this.props.notes;
+  }
+
+  render() {
+    return (
+      <Style.Wrapper>
+        <div>
+          <ul>
+            <Style.Text>
+              {this.showTable()}
+            </Style.Text>
+          </ul>
+        </div>
+      </Style.Wrapper>
+    );
+  }
+}
