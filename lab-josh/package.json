@@ -4,9 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "watch": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "jest-setup.js"
+    ],
+    "setupFiles": [
+      "./__test__/jest-setup.js"
+    ],
+    "testURL": "http://localhost/"
   },
   "keywords": [],
   "author": "",

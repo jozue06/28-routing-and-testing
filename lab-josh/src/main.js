@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Style from './components/style/styles.js';
+import Header from './components/app/header.js'
+import Footer from './components/app/footer.js'
+
 
 import {
   BrowserRouter as Router,
@@ -22,12 +25,14 @@ class App extends React.Component {
 
   render() {
     return <Router>
+      <main>
+      <Header />
       <Style.Wrapper>
       <div>
         <nav>
           <ul>
-          <Style.Link><li><Link to="/">Landing</Link></li></Style.Link>
-            <Style.Link> <li><Link to="/dashboard">Dashboard</Link></li></Style.Link>
+          <Style.Text><li><Link to="/">Landing</Link></li></Style.Text>
+            <Style.Text> <li><Link to="/dashboard">Dashboard</Link></li></Style.Text>
           </ul>
         </nav>
         <Style.Title>{this.state.title}</Style.Title>
@@ -37,10 +42,15 @@ class App extends React.Component {
 
       </div>
       </Style.Wrapper>
+      </main>
+      
     </Router>;
+      <Footer />
   }
 }
 
 let root = document.createElement('div');
 document.body.appendChild(root);
 ReactDOM.render(<App />, root);
+
+export default App;

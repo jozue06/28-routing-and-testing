@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import App from '../../../src/components/app/index.js';
+import App from '../../../src/main.js';
 
 describe('<App/> (Enzyme Test)', () => {
   it('is alive at application start', () => {
