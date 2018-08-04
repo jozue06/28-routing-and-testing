@@ -23,12 +23,12 @@ export default class NoteForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.addNote(this.state);
-    console.log('# 1.1 plaasss?', this.state);
+    document.getElementById('form').reset();
   }
 
 
   render() {
-    return <form onSubmit={this.handleSubmit}>
+    return <form id="form" onSubmit={this.handleSubmit}>
       <input type="text" name="noteName" placeholder="Note Title" onChange={this.handleChange} />
       <input type="text" name="content" placeholder="text" onChange={this.handleChange} />
       <input type="submit" value="Add" />
