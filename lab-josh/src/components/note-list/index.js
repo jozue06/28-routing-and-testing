@@ -2,7 +2,7 @@ import React from 'react';
 import Style from '../style/styles.js';
 
 
-export default class NoteResults extends React.Component {
+export default class NoteList extends React.Component {
   constructor(props) {
     super(props);
     this.showTable = this.showTable.bind(this);
@@ -19,7 +19,7 @@ export default class NoteResults extends React.Component {
     return (
       <Style.Wrapper>
         <div>
-          <ul>
+          <ul>  
             <Style.Text>
               {this.showTable()}
             </Style.Text>
