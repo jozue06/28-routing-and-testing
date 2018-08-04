@@ -22,11 +22,12 @@ class App extends React.Component {
 
   render() {
     return <Router>
+      <Style.Wrapper>
       <div>
         <nav>
           <ul>
-            <li><Link to="/">Landing</Link></li>
-            <li><Link to="/dashboard">Dashboard</Link></li>
+          <Style.Link><li><Link to="/">Landing</Link></li></Style.Link>
+            <Style.Link> <li><Link to="/dashboard">Dashboard</Link></li></Style.Link>
           </ul>
         </nav>
         <Style.Title>{this.state.title}</Style.Title>
@@ -35,6 +36,7 @@ class App extends React.Component {
 
 
       </div>
+      </Style.Wrapper>
     </Router>;
   }
 }
