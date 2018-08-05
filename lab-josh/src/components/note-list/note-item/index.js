@@ -1,4 +1,5 @@
 import React from 'react';
+import Style from '../../style/styles.js'
 
 export default class NoteItem extends React.Component {
   constructor(props) {
@@ -19,10 +20,15 @@ export default class NoteItem extends React.Component {
 
     console.log('#2 render the note item', this.props.note);
 
-    return <li className="note">
-      <h3>Note: {this.props.note.noteName} </h3>
-      <h4>Content:{this.props.note.content} </h4>
-      <button onClick={this.deleteNote} > x </button>
-    </li>;
+    return (
+    <Style.Title>
+      <li className="note">
+      <Style.Text>Note Title: {this.props.note.noteName}</Style.Text>
+      <h4>Note Content: <Style.Text> {this.props.note.content}</Style.Text></h4>
+      
+      <Style.Button onClick={this.deleteNote}>x</Style.Button>
+    </li>
+    </Style.Title>
+    )
   }
 }

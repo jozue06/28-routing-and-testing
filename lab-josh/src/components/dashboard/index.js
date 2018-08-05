@@ -35,7 +35,7 @@ class Dashboard extends React.Component {
 
     return (
       <div>
-        <Header />
+      
         <Style.Wrapper>
           <NoteForm addNote={this.addNote} />
           {this.state.notes.map((note) => <NoteItem id={note.id} note={note} deleteNote={this.deleteNote} />)

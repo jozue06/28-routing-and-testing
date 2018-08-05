@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App/> (Snapshot Test) renders right 1`] = `
+<main>
+  <header
+    className="sc-bZQynM jVNvTF"
+  >
+    Make simple notes and delete them
+  </header>
+  <section
+    className="sc-bxivhb gFnYhB"
+  >
+    <div>
+      <nav>
+        <ul>
+          <p
+            className="sc-bwzfXH jztZXZ"
+          >
+            <li>
+              <a
+                href="/"
+                onClick={[Function]}
+              >
+                Landing
+              </a>
+            </li>
+          </p>
+          <p
+            className="sc-bwzfXH jztZXZ"
+          >
+             
+            <li>
+              <a
+                href="/dashboard"
+                onClick={[Function]}
+              >
+                Dashboard
+              </a>
+            </li>
+          </p>
+        </ul>
+      </nav>
+      <h1
+        className="sc-bdVaJa eFHbHq"
+      >
+        Notes N Stuff
+      </h1>
+      <div>
+        <h1
+          className="sc-bdVaJa eFHbHq"
+        >
+          Welcome to my wonderful homepage landing thing
+        </h1>
+      </div>
+    </div>
+  </section>
+</main>
+`;
