@@ -24,6 +24,7 @@ export default class NoteForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.addNote(this.state);
+    localStorage.setItem(this.state.id, this.state.content)
     document.getElementById('form').reset();
   }
 

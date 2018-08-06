@@ -7,7 +7,9 @@ import NoteForm from '../note-create-form/index.js';
 import NoteItem from '../note-list/note-item/index.js';
 
 
+
 class Dashboard extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -17,6 +19,33 @@ class Dashboard extends React.Component {
     this.addNote = this.addNote.bind(this);
     this.deleteNote = this.deleteNote.bind(this);
   }
+
+  hydrateStateWithLocalStorage() {
+    for (let key in this.state) {
+      // if the key exists in localStorage
+    
+        console.log('hidratedd')
+        // get the key's value from localStorage
+        let value = localStorage.getItem(key);
+        
+
+        // parse the localStorage string and setState
+        try {
+          value = JSON.parse(value);
+          this.setState({ notes: [...this.state.notes]  });
+          console.log('from storage  -->', [...this.state.nots])
+        } catch (e) {
+          // handle empty string
+          this.setState({ [key]: value });
+        }
+      }
+    
+  }
+
+  componentDidMount() {
+    console.log('mlkjasdfteeeee')
+    this.hydrateStateWithLocalStorage();
+ }
 
   addNote(note) {
     this.state.notes.push(note);

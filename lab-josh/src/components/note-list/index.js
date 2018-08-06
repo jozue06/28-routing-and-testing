@@ -7,15 +7,16 @@ export default class NoteList extends React.Component {
     super(props);
     this.showTable = this.showTable.bind(this);
   }
+  
 
 
   showTable() {
     console.log('showtable', this.state);
-
+ 
     return this.props.notes;
   }
 
-  render() {
+  render() { 
     return (
       <Style.Wrapper>
         <div>
