@@ -37,6 +37,7 @@ class Dashboard extends React.Component {
   addNote(note) {
     this.state.notes.push(note);
     this.setState({ notes: [...this.state.notes] });
+
     let storageToSet = JSON.stringify(this.state.notes)
     localStorage.setItem('note', storageToSet)
   }
@@ -47,6 +48,8 @@ class Dashboard extends React.Component {
     const noteIndex = this.state.notes.indexOf(deletedNote);
     this.state.notes.splice(noteIndex, 1);
     this.setState({ notes: [...this.state.notes] });
+    let storageToSet = JSON.stringify(this.state.notes)
+    localStorage.setItem('note', storageToSet)
   }
 
   render() {
