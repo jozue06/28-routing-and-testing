@@ -21,35 +21,24 @@ class Dashboard extends React.Component {
   }
 
   hydrateStateWithLocalStorage() {
-    for (let key in this.state) {
-      // if the key exists in localStorage
-    
-        console.log('hidratedd')
-        // get the key's value from localStorage
-        let value = localStorage.getItem(key);
-        
-
-        // parse the localStorage string and setState
-        try {
-          value = JSON.parse(value);
-          this.setState({ notes: [...this.state.notes]  });
-          console.log('from storage  -->', [...this.state.nots])
-        } catch (e) {
-          // handle empty string
-          this.setState({ [key]: value });
-        }
-      }
-    
-  }
-
+    if ( localStorage.length > 1){
+      console.log(localStorage)
+    let hydrateState = JSON.parse(localStorage.note)
+    this.setState({ notes: [...hydrateState] });
+    }
+    }
+  
   componentDidMount() {
     console.log('mlkjasdfteeeee')
     this.hydrateStateWithLocalStorage();
- }
+ }   
+
 
   addNote(note) {
     this.state.notes.push(note);
     this.setState({ notes: [...this.state.notes] });
+    let storageToSet = JSON.stringify(this.state.notes)
+    localStorage.setItem('note', storageToSet)
   }
 
   deleteNote(id) {

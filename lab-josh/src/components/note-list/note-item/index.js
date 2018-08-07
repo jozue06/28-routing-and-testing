@@ -10,6 +10,7 @@ export default class NoteItem extends React.Component {
     this.deleteNote = this.deleteNote.bind(this);
   }
 
+
     deleteNote(e) {
       console.log('this state?', this.props.id);
       e.preventDefault();
